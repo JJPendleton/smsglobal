@@ -1,6 +1,15 @@
 = smsglobal
 
-Description goes here.
+Ruby gem to send and receive SMS messages via SMSGlobal.
+
+To use:
+
+  require 'smsglobal'
+  sender = SmsGlobal::Sender.new :user => 'CHANGEME', :password => 'CHANGEME'
+
+  sender.send_text 'Test text message', '040xxxxxxx', '040yyyyyyy'
+
+Enjoy!
 
 == Note on Patches/Pull Requests
  
