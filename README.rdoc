@@ -1,13 +1,18 @@
 = smsglobal
 
-Ruby gem to send and receive SMS messages via SMSGlobal.
+Ruby gem to send SMS messages via SMSGlobal.
+
+This was written by the cool people at GetUp Australia (http://getup.org.au/),
+who've decided to share this code with the community.
 
 To use:
 
   require 'smsglobal'
   sender = SmsGlobal::Sender.new :user => 'CHANGEME', :password => 'CHANGEME'
 
-  sender.send_text 'Test text message', '040xxxxxxx', '040yyyyyyy'
+  sender.send_text 'Test text message', '0404565555', '0401235555'
+
+where 0404565555 is the recipient address, and 0401235555 is the sender.
 
 Enjoy!
 
@@ -18,9 +23,10 @@ Enjoy!
 * Add tests for it. This is important so I don't break it in a
   future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+  (if you want to have your own version, that is fine but bump version in 
+  a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
 == Copyright
 
-Copyright (c) 2010 Alex Cooper. See LICENSE for details.
+Copyright (c) 2010 GetUp Australia and Alex Cooper. See LICENSE for details.
