@@ -9,6 +9,7 @@ module SmsGlobal
       @options = options
       raise 'missing :user' unless @options[:user]
       raise 'missing :password' unless @options[:password]
+      @options.each {|k,v| @options[k] = v.to_s if v.present? }
       @base = @options[:base] || 'http://www.smsglobal.com/'
     end
 
@@ -26,6 +27,8 @@ module SmsGlobal
         params[:scheduledatetime] = send_at.strftime('%Y-%m-%d %h:%M:%S')
       end
       params[:maxsplit] = @options[:maxsplit] if @options[:maxsplit]
+      params[:userfield] = @options[:userfield] if @options[:userfield]
+      params[:api] = @options[:api] if @options[:api]
 
       resp = get(params)
 
