@@ -9,7 +9,7 @@ module SmsGlobal
       @options = options
       raise 'missing :user' unless @options[:user]
       raise 'missing :password' unless @options[:password]
-      @options.each {|k,v| @options[k] = v.to_s if v.present? }
+      @options.each {|k,v| @options[k] = v.to_s if v }
       @base = @options[:base] || 'http://www.smsglobal.com/'
     end
 
