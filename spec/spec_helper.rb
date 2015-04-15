@@ -7,7 +7,7 @@ require 'webmock/rspec'
 include SmsGlobal
 
 RSpec.configure do |config|
-  config.include WebMock
+  config.include WebMock::API
 end
 
 def stub_sms(response_body)
