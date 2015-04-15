@@ -16,17 +16,7 @@ Gem::Specification.new do |s|
     "LICENSE",
      "README.rdoc"
   ]
-  s.files = [
-    ".document",
-     ".gitignore",
-     "LICENSE",
-     "README.rdoc",
-     "Rakefile",
-     "VERSION",
-     "lib/smsglobal.rb",
-     "spec/smsglobal_spec.rb",
-     "spec/spec_helper.rb"
-  ]
+  s.files = `git ls-files`.split("\n")
   s.homepage = %q{http://github.com/kuperov/smsglobal}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
@@ -34,20 +24,11 @@ Gem::Specification.new do |s|
   s.summary = %q{Ruby interface for SMSGlobal}
   s.test_files = [
     "spec/smsglobal_spec.rb",
-     "spec/spec_helper.rb"
+    "spec/spec_helper.rb"
   ]
 
-  if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rspec>, [">= 2.0.0"])
-    else
-      s.add_dependency(%q<rspec>, [">= 2.0.0"])
-    end
-  else
-    s.add_dependency(%q<rspec>, [">= 2.0.0"])
-  end
+  s.add_development_dependency("rspec", ">= 2.0.0")
+  s.add_development_dependency("webmock")
 end
+
 
