@@ -38,5 +38,18 @@ describe 'SmsGlobal' do
       expect(resp[:status]).to eq :failed
       expect(resp[:message]).to eq "Unable to reach SMSGlobal"
     end
+
+    context 'with non string values' do
+      before do
+        @sender = Sender.new :user => 'DUMMY', :password => 12345
+      end
+      it 'should not fail' do
+        stub_sms_ok
+        resp = @sender.send_text(1, 12341324, 1234)
+        resp[:status].should == :ok
+        resp[:code].should == 0
+        resp[:message].should == 'Sent queued message ID: 941596d028699601'
+      end
+    end
   end
 end
