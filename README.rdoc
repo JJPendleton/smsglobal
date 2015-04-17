@@ -1,4 +1,5 @@
 = smsglobal
+{<img src="https://travis-ci.org/kuperov/smsglobal.svg?branch=add_travis" alt="Build Status" />}[https://travis-ci.org/kuperov/smsglobal]
 
 Ruby gem to send SMS messages via SMSGlobal.
 
