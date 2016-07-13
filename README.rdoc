@@ -1,7 +1,7 @@
 = smsglobal
 {<img src="https://travis-ci.org/kuperov/smsglobal.svg?branch=add_travis" alt="Build Status" />}[https://travis-ci.org/kuperov/smsglobal]
 
-Ruby gem to send SMS messages via SMSGlobal.
+Ruby gem to send SMS messages via <a href="http://www.smsglobal.com/">SMSGlobal</a>.
 
 This was written by the cool people at GetUp Australia (http://getup.org.au/),
 who've decided to share this code with the community.
